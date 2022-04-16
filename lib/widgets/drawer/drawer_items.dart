@@ -1,3 +1,5 @@
+import 'package:backery/controllers/auth_controller.dart';
+import 'package:backery/controllers/cart_controllers.dart';
 import 'package:backery/pages/All/all_products.dart';
 import 'package:backery/routes/route_helper.dart';
 import 'package:backery/widgets/drawer/drawer_list.dart';
@@ -36,7 +38,16 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                DrawerList(icon: Icons.help,text: "Help",iconColor: Colors.orange,tap: (){Get.toNamed(RouteHelper.getAboutUs());}),
                DrawerList(icon: Icons.support, text: "Support",iconColor: Colors.orange,),
                DrawerList(icon: Icons.system_security_update_good, text: "Terms and Condition",iconColor: Colors.orange,tap: (){Get.toNamed(RouteHelper.getTermsPage());},),
-                DrawerList(icon: Icons.logout_sharp,text: "Logout",iconColor: Colors.orange,),
+                GestureDetector(
+                   onTap: (){
+                  if(Get.find<AuthController>().userLoggedIn()){
+                    Get.find<AuthController>().clearSharedData();
+                    Get.offNamed(RouteHelper.signIn);
+                    Get.find<CartController>().clear();
+                    Get.find<CartController>().clearCartHistory();
+                  }
+                },
+                  child: DrawerList(icon: Icons.logout_sharp,text: "Logout",iconColor: Colors.orange,)),
               ],
             );
   }

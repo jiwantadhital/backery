@@ -28,7 +28,7 @@ class AllProductsList extends StatelessWidget {
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisExtent: 230,
+                    mainAxisExtent: 250,
                     crossAxisSpacing: 5.0,
                     mainAxisSpacing: 5.0,
                   ),

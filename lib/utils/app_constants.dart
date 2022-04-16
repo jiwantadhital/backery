@@ -9,9 +9,9 @@ class AppConstants{
   static const String CART_LIST="Cart-list";
   static const String CART_HISTORY_LIST="cart-history-list";
   static const String REGISTRATION_URI = "/user/register-now";
-  static const String LOGIN_URI = "/user/login-now";
+  static const String LOGIN_URI = "/api/login";
   static const String RECENT_URI = "/recent-items";
   static const String ALL_URI = "/all";
-  static const String USER_INFO = "/info";
+  static const String USER_INFO = "/api/me";
 
 }
